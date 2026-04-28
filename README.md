@@ -74,25 +74,32 @@ How to work with the project:
 
 ## Chapter III
 
-### Exercise 00. First shell script
+### Exercise 00. Data Retrieval
 
-- Turn-in directory: `ex00/`.
-- Files to turn in: `hh.sh`, `hh.json`.
-- Allowed functions: curl, jq.
+- Submission directory: `ex00/`.
+- Files to submit: `hh.json`, `hh.sh` (optional).
+- Allowed imports (if using the API option): `curl`, `jq`.
 
-For this exercise, you will interact with the HeadHunter API to parse information about vacancies. To do so, you must understand how both curl and the [HeadHunter API work](https://dev.hh.ru/).
+In this exercise, you need to obtain a file with vacancy data that you will work with in subsequent tasks.
+
+You can interact with the HeadHunter API by registering your own application on the [website](https://dev.hh.ru/). This option may take time for registration approval, but it will help you understand how `curl` and the HeadHunter API work.
 
 Write a shell script that:
+- Takes a vacancy title as an argument — "data scientist" (this will be useful in later exercises).
+- Downloads information about the first 20 vacancies matching the search parameters.
+- Saves the result to a file named `hh.json`.
 
-- gets the name of a vacancy, "data scientist", as an argument (some later exercises will be based on this);
-- downloads information about the first 20 vacancies that correspond to the search parameters;
-- stores it in a file named `hh.json`.
+When accessing the HeadHunter API via `curl`, you will need an access token. Store the token in an environment variable and pass it to the script via the environment variable. This is secure.
 
-The result in the file must be formatted so that each field is on a different line. See the example in the [ex00_sample.json](code-samples/ex00_sample.json) file.
+The output format in the file must have each field on a new line. See the example in `materials/hh.json`.
 
-Your script must be executable. The interpreter to use is `/bin/sh`.
+The script must be executable. The interpreter to use is: `/bin/sh`.
 
-Place your script and the parsing results in the `ex00` folder in the `src` directory of your repository.
+Place the script and the parsing results in the `ex00` directory inside the `src` directory of your repository. Important: do not upload any files containing passwords, tokens, or any other secrets to git!
+
+Alternative option if you're short on time:
+- Copy the file `materials/hh.json` to the `ex00/` directory.
+- Make sure the file contains data about 20 Data Scientist vacancies in JSON format, where each field is on a new line (pretty-printed JSON).
 
 ## Chapter IV
 
